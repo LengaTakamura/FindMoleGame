@@ -1,0 +1,55 @@
+using Unity.VisualScripting;
+using UnityEngine;
+
+public class Kuromaru : MonoBehaviour
+{
+    private Vector2 position;
+
+    [SerializeField]AudioSource audioSource;
+
+    Timer m_timer;
+
+    center m_center;
+
+    //center Center;     //äiî[Ç∑ÇÈÇΩÇﬂÇÃïœêî
+
+    //GameObject center2;Å@//äiî[Ç∑ÇÈÇΩÇﬂÇÃïœêî
+    // Start is called before the first frame update
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+
+        m_timer = GameObject.FindObjectOfType<Timer>();
+
+        m_center = GameObject.FindObjectOfType<center>();
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(m_timer.timeup == true || m_center.GameOver == true)
+        {
+            this.enabled = false;
+        }
+
+        position = Input.mousePosition;
+
+        position = Camera.main.ScreenToWorldPoint(position);
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+           
+            Vector2 pin = position;
+
+            transform.position = pin;
+
+            audioSource.Play();
+             
+        }
+
+        
+    }
+
+    
+}
