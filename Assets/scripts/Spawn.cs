@@ -17,12 +17,12 @@ public class Spawn : MonoBehaviour
 
     void Start()
     {
-        m_center = GameObject.Find("center");　//m_centerにcenterという名前のゲームオブジェクトを格納
+        m_center = GameObject.Find("Center");　//m_centerにcenterという名前のゲームオブジェクトを格納
     }
 
     public void SpawnCenter()　//目標を画面内のランダムな位置に移動させる
     {
-        float x = Random.Range(-9.25f, 9.25f); //画面上の範囲(X)内でランダムな座標を取得する
+        float x = Random.Range(-9f, 9f); //画面上の範囲(X)内でランダムな座標を取得する
 
         float y = Random.Range(-4f, 4f); // 画面上の範囲(Y)内でランダムな座標を取得する
 

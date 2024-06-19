@@ -9,7 +9,7 @@ public class Kuromaru : MonoBehaviour
 
     Timer m_timer;
 
-    center m_center;
+    CenterScript m_center;
 
     //center Center;     //äiî[Ç∑ÇÈÇΩÇﬂÇÃïœêî
 
@@ -21,17 +21,17 @@ public class Kuromaru : MonoBehaviour
 
         m_timer = GameObject.FindObjectOfType<Timer>();
 
-        m_center = GameObject.FindObjectOfType<center>();
+        m_center = GameObject.FindObjectOfType<CenterScript>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(m_timer.timeup == true || m_center.GameOver == true)
-        {
-            this.enabled = false;
-        }
+        //if(m_timer.timeup == true || m_center.GameOver == true)
+        //{
+        //    this.enabled = false;
+        //}
 
         position = Input.mousePosition;
 

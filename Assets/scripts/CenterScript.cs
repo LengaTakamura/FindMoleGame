@@ -7,7 +7,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class center : MonoBehaviour
+public class CenterScript : MonoBehaviour
 {
 
     [SerializeField] GameObject m_kuromaru; //ピンをした位置に移動するカーソルkuromaruを格納する変数m_kuromaruをシリアル化
@@ -23,7 +23,7 @@ public class center : MonoBehaviour
     
     public int distance;
 
-    public Slider slider;
+     Slider slider;
 
     int maxHp = 5;
     int Hp;
@@ -37,6 +37,10 @@ public class center : MonoBehaviour
     [SerializeField] GameObject timer;
 
     Timer timer1;
+
+    [SerializeField] Stop stp;
+
+    [SerializeField] GameObject effect;
 
     public bool GameOver;
     void Start()
@@ -52,6 +56,8 @@ public class center : MonoBehaviour
         timer1 = GameObject.FindObjectOfType<Timer>();
 
         scr = GameObject.FindAnyObjectByType<Score>();
+
+        scr = FindFirstObjectByType<Score>();
 
         //HPを最大HPと同じ値に。
         Hp = maxHp;
@@ -73,6 +79,9 @@ public class center : MonoBehaviour
         if(slider.value == 0)
             
         {
+            Instantiate(effect,transform.position, Quaternion.identity);
+
+
             timer.SetActive(false);
 
             scr.ScoreManager();
@@ -83,12 +92,13 @@ public class center : MonoBehaviour
 
             GameOver = true;
 
+            //stp.AddOff();
         }
         if (Input.GetButtonDown("Fire1"))
         {
                times++;
 
-               Vector2 posi = this.transform.position;
+               Vector2 posi = transform.position;
 
 
                Vector2 posi2 = m_kuromaru.transform.position;
@@ -96,7 +106,7 @@ public class center : MonoBehaviour
 
                distance = (int)(posi2 - posi).magnitude;
 
-               //Debug.Log("距離は" + distance);
+               Debug.Log("距離は" + distance);
 
                textsystem.text = "距離は" + distance;
 

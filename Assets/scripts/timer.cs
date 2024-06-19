@@ -8,25 +8,24 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     private float countdownSeconds;
-     private Text timeText;
-
-    [SerializeField] GameObject gameover2;
+     private TextMeshProUGUI timeText;
 
     [SerializeField] GameObject title;
-
-    [SerializeField] GameManager gamemanager;
-    [SerializeField] center _center;
+   
+    [SerializeField] CenterScript _center;
 
     Score scr2;
 
     [SerializeField] GameObject TimeupText;
 
+    [SerializeField] Stop st;
+
     public bool timeup;
 
     private void Start()
     {
-        timeText = GetComponent<Text>();
-        countdownSeconds = 30;
+        timeText = GetComponent<TextMeshProUGUI>();
+        countdownSeconds = 31;
 
         scr2 = GameObject.FindAnyObjectByType<Score>();
     }
@@ -47,6 +46,7 @@ public class Timer : MonoBehaviour
             if (_center.GameOver) return;
             // 0ïbÇ…Ç»Ç¡ÇΩÇ∆Ç´ÇÃèàóù
 
+
             scr2.ScoreManager();
 
             title.SetActive(true);
@@ -57,6 +57,7 @@ public class Timer : MonoBehaviour
 
             timeup = true;
 
+            //st.AddOff();
         }
     }
 }
