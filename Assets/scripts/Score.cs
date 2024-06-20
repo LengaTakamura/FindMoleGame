@@ -8,7 +8,7 @@ public class Score : MonoBehaviour
     private Text scoreText;   
     void Start()
     {
-       scoreText = GetComponent<Text>();
+       scoreText = GetComponent<Text>(); //このスクリプトが紐づいているオブジェクトかTextコンポーネントを持ってきて格納
 
     }
     public void AddScoreCount()　//スコアをカウントするメソッド

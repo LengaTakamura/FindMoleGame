@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class destroy : MonoBehaviour
+public class Destroy : MonoBehaviour
 {
     [SerializeField]float lifetime = 1.0f;
 

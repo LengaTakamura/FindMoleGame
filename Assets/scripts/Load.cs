@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class Load : MonoBehaviour
 {
     public void OnStartButtun ()　// スタートボタンを押したときの処理

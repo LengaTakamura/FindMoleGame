@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-
 public class CountDown : MonoBehaviour
 {
     float time;
@@ -21,23 +17,10 @@ public class CountDown : MonoBehaviour
 
         cdtext.text = "3";
 
-       
     }
-
-    // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime;
-
-        if(time <3) 
-        {
-           //stt.AddOff();
-
-        }
-        else if (time >=3) 
-        {
-            //stt.AddOn();
-        }
 
         if (time >= 1) 
         {
@@ -58,7 +41,5 @@ public class CountDown : MonoBehaviour
         {
             Destroy(cdtext);
         }
-
-
     }
 }

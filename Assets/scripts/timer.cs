@@ -1,13 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-
 public class Timer : MonoBehaviour
 {
-    private float countdownSeconds;
+     float countdownSeconds;
+
      private TextMeshProUGUI timeText;
 
     [SerializeField] GameObject title;
@@ -47,15 +44,12 @@ public class Timer : MonoBehaviour
         var span = new TimeSpan(0, 0, (int)countdownSeconds);
         timeText.text = span.ToString(@"mm\:ss");
 
-       
-
         if (countdownSeconds <= 0 && once )
         {
         
             Instantiate(Effect, centerr.transform.position, Quaternion.identity);
 
             if (_center.GameOver) return;
-            // 0•b‚É‚È‚Á‚½‚Æ‚«‚Ìˆ—
 
             scr2.ScoreManager();
 
@@ -68,7 +62,7 @@ public class Timer : MonoBehaviour
             timeup = true;
 
             once = false;
-            //st.AddOff();
+          
         }
     }
 }

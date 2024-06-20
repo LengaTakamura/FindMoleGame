@@ -2,24 +2,23 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
+    public int num = 1;　//右に動くか左に動くかを決める変数num
 
-    public int number2 = 1;
-
-    Vector2 pos2;
+    Vector2 pos;　　//オブジェクトの位置を格納するVector変数
     void Update()
     {
-        pos2 = transform.position;
+        pos = transform.position;　//オブジェクトの位置を格納
 
-        transform.Translate(transform.right * Time.deltaTime * 100 * number2);
+        transform.Translate(transform.right * Time.deltaTime * 100 * num);　//位置を動かす処理
 
-        if (pos2.x > 900)
+        if (pos.x > 900)　//
         {
-            number2 = -1;
+            num = -1;
 
         }
-        if (pos2.x < 70)
+        if (pos.x < 70)
         {
-            number2 = 1;
+            num = 1;
 
         }
     }

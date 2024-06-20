@@ -1,9 +1,3 @@
-using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +13,6 @@ public class CenterScript : MonoBehaviour
     [SerializeField] GameObject _effect;
 
     int times;
-
 
     public int distance;
 
@@ -92,7 +85,7 @@ public class CenterScript : MonoBehaviour
 
             GameOver = true;
 
-            //stp.AddOff();
+           
         }
         if (Input.GetButtonDown("Fire1"))
         {
@@ -115,9 +108,7 @@ public class CenterScript : MonoBehaviour
 
                 slider.value = maxHp;
                 Hp = maxHp;
-                //HPを最大HPと同じ値に。
-
-                //Debug.Log(Center.distance);
+                //HPを最大HPと同じ値に
 
                 times = 0;
 
@@ -126,9 +117,7 @@ public class CenterScript : MonoBehaviour
 
                 textsystem.text = "次のモグラを探そう！";
 
-                Instantiate(effect);
-
-                //Destroy(gameObject);
+                Instantiate(effect);             
 
                 spawn1.Effect();
 

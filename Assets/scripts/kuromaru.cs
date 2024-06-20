@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+
 using UnityEngine;
 
 public class Kuromaru : MonoBehaviour
@@ -6,15 +6,10 @@ public class Kuromaru : MonoBehaviour
     private Vector2 position;
 
     [SerializeField]AudioSource audioSource;
-
+    
     Timer m_timer;
 
     CenterScript m_center;
-
-    //center Center;     //äiî[Ç∑ÇÈÇΩÇﬂÇÃïœêî
-
-    //GameObject center2;Å@//äiî[Ç∑ÇÈÇΩÇﬂÇÃïœêî
-    // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -24,18 +19,6 @@ public class Kuromaru : MonoBehaviour
         m_center = GameObject.FindObjectOfType<CenterScript>();
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //if(m_timer.timeup == true || m_center.GameOver == true)
-        //{
-        //    this.enabled = false;
-        //}
-    
-        
-    }
-
     public void Movement()
     {
 
