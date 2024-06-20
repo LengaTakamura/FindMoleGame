@@ -1,10 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class GameManager2 : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public void OnStartButtun ()　// スタートボタンを押したときの処理
+    [SerializeField]GameObject _cdtext;
+
+    TextMeshProUGUI _textMeshPro;
+
+    [SerializeField] Stop _stop;
+   
+    void Start()
     {
-        SceneManager.LoadScene("game"); //gameシーンに移行する
+        _textMeshPro = _cdtext.GetComponent<TextMeshProUGUI>();
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        if (_textMeshPro != null) 
+        {
+            _stop.AddOff();
+            
+        }
+        if (_textMeshPro == null) 
+        {
+            _stop.AddOn();
+        }
+        
     }
 }

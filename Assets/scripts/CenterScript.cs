@@ -14,16 +14,16 @@ public class CenterScript : MonoBehaviour
 
     Text textsystem;　// このオブジェクトにあるテキストコンポーネントを格納する変数
 
-    Spawn spawn1;　　
+    Spawn spawn1;
 
-    [SerializeField] GameObject canvas;
+    [SerializeField] GameObject _effect;
 
     int times;
 
-    
+
     public int distance;
 
-     Slider slider;
+    Slider slider;
 
     int maxHp = 5;
     int Hp;
@@ -42,6 +42,8 @@ public class CenterScript : MonoBehaviour
 
     [SerializeField] GameObject effect;
 
+    [SerializeField] Kuromaru _kuromaru;
+
     public bool GameOver;
     void Start()
     {
@@ -51,7 +53,7 @@ public class CenterScript : MonoBehaviour
 
         textsystem = GameObject.Find("Distance").GetComponent<Text>();
 
-        slider =GameObject.Find("Slider").GetComponent<Slider>();
+        slider = GameObject.Find("Slider").GetComponent<Slider>();
 
         timer1 = GameObject.FindObjectOfType<Timer>();
 
@@ -66,21 +68,19 @@ public class CenterScript : MonoBehaviour
 
         spawn1.SpawnCenter();
     }
-    
+
     void Update()
-        
+
     {
-        if (timer1.timeup == true || GameOver ==true)
+        if (timer1.timeup == true || GameOver == true)
         {
             this.enabled = false;
         }
 
+        if (slider.value == 0)
 
-        if(slider.value == 0)
-            
         {
-            Instantiate(effect,transform.position, Quaternion.identity);
-
+            Instantiate(effect, transform.position, Quaternion.identity);
 
             timer.SetActive(false);
 
@@ -96,23 +96,22 @@ public class CenterScript : MonoBehaviour
         }
         if (Input.GetButtonDown("Fire1"))
         {
-               times++;
+            _kuromaru.Movement();
 
-               Vector2 posi = transform.position;
+            times++;
 
+            Vector2 posi = transform.position;
+            Vector2 posi2 = m_kuromaru.transform.position;
 
-               Vector2 posi2 = m_kuromaru.transform.position;
+            distance = (int)(posi2 - posi).magnitude;
 
+            //Debug.Log("距離は" + distance);
 
-               distance = (int)(posi2 - posi).magnitude;
-
-               Debug.Log("距離は" + distance);
-
-               textsystem.text = "距離は" + distance;
+            textsystem.text = "距離は" + distance;
 
             if (distance <= 1)
             {
-                
+
 
                 slider.value = maxHp;
                 Hp = maxHp;
@@ -127,12 +126,12 @@ public class CenterScript : MonoBehaviour
 
                 textsystem.text = "次のモグラを探そう！";
 
-                Instantiate(canvas);
+                Instantiate(effect);
 
                 //Destroy(gameObject);
 
                 spawn1.Effect();
-                
+
                 spawn1.SpawnCenter();
 
             }
@@ -141,7 +140,7 @@ public class CenterScript : MonoBehaviour
                 if (times > 1)
                 {
                     Hp--;
-                    slider.value =Hp;
+                    slider.value = Hp;
                     Debug.Log(times);
                 }
 
@@ -150,5 +149,5 @@ public class CenterScript : MonoBehaviour
 
     }
 
-    
+
 }

@@ -32,23 +32,22 @@ public class Kuromaru : MonoBehaviour
         //{
         //    this.enabled = false;
         //}
+    
+        
+    }
+
+    public void Movement()
+    {
 
         position = Input.mousePosition;
 
         position = Camera.main.ScreenToWorldPoint(position);
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-           
             Vector2 pin = position;
 
             transform.position = pin;
 
             audioSource.Play();
-             
-        }
-
-        
     }
 
     

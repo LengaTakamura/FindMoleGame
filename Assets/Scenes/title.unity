@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 1614408609}
   - component: {fileID: 1614408612}
   m_Layer: 5
-  m_Name: Button
+  m_Name: StartButtun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -683,7 +683,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5310401529e7eff4295d092853627754, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1584068caa79f104da425fe0192bc92c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

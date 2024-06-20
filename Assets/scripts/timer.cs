@@ -20,7 +20,13 @@ public class Timer : MonoBehaviour
 
     [SerializeField] Stop st;
 
+    [SerializeField] GameObject centerr;   
+
     public bool timeup;
+
+    [SerializeField] GameObject Effect;
+
+    bool once= true;
 
     private void Start()
     {
@@ -41,11 +47,15 @@ public class Timer : MonoBehaviour
         var span = new TimeSpan(0, 0, (int)countdownSeconds);
         timeText.text = span.ToString(@"mm\:ss");
 
-        if (countdownSeconds <= 0)
+       
+
+        if (countdownSeconds <= 0 && once )
         {
+        
+            Instantiate(Effect, centerr.transform.position, Quaternion.identity);
+
             if (_center.GameOver) return;
             // 0•b‚É‚È‚Á‚½‚Æ‚«‚Ìˆ—
-
 
             scr2.ScoreManager();
 
@@ -57,6 +67,7 @@ public class Timer : MonoBehaviour
 
             timeup = true;
 
+            once = false;
             //st.AddOff();
         }
     }

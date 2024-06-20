@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class Load : MonoBehaviour
 {
-    public void Load()
+    public void OnStartButtun ()　// スタートボタンを押したときの処理
     {
-        SceneManager.LoadScene("title");
+        SceneManager.LoadScene("game"); //gameシーンに移行する
     }
 }

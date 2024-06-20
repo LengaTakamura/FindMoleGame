@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Stop : MonoBehaviour
 {
-     [SerializeField]CenterScript center1;
+     [SerializeField]GameObject center1;
      
-   [SerializeField] Kuromaru kuromaru1;
+   [SerializeField] GameObject kuromaru1;
     public void AddOff()
     {
 
-        center1.enabled = false;
+        center1.SetActive(false);
 
-        kuromaru1.enabled = false;
+        kuromaru1.SetActive(false);
 
     }
 
@@ -20,9 +20,9 @@ public class Stop : MonoBehaviour
 
     public void AddOn()
     {
-        center1.enabled = true;
-
-        kuromaru1.enabled = true;
+        center1.SetActive(true); 
+        
+        kuromaru1.SetActive(true);
 
     }
 }
