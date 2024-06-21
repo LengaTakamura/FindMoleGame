@@ -14,7 +14,7 @@ public class Move : MonoBehaviour
 
     void Update()
     {
-        float x = _radius2 * Mathf.Cos(_speed2 * Time.time);
+        float x = _radius2 * Mathf.Sin(_speed2 * Time.time);
         Vector2 position = new Vector2(x , _rect.position.y);
         _rect.position = position + Vector2.right * _initialPosition2;
     }
