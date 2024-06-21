@@ -4,15 +4,15 @@ using UnityEngine.UI;
 public class CenterScript : MonoBehaviour
 {
 
-    [SerializeField] GameObject m_kuromaru; //ピンをした位置に移動するカーソルkuromaruを格納する変数m_kuromaruをシリアル化
+    [SerializeField] GameObject _ObjKuromaru; //ピンをした位置に移動するカーソルkuromaruを格納する変数m_kuromaruをシリアル化
 
-    Text textsystem;　// このオブジェクトにあるテキストコンポーネントを格納する変数
+    Text _textsystem;　// このオブジェクトにあるテキストコンポーネントを格納する変数
 
-    Spawn spawn1;
-
+    Spawn _spawn1;
+ 
     [SerializeField] GameObject _effect;
 
-    int times;
+    int _times;
 
     public int distance;
 
@@ -40,11 +40,11 @@ public class CenterScript : MonoBehaviour
     public bool GameOver;
     void Start()
     {
-        m_kuromaru = GameObject.Find("kuromaru");
+        _ObjKuromaru = GameObject.Find("kuromaru");
 
-        spawn1 = GameObject.Find("Spawn Area").GetComponent<Spawn>();
+        _spawn1 = GameObject.Find("Spawn Area").GetComponent<Spawn>();
 
-        textsystem = GameObject.Find("Distance").GetComponent<Text>();
+        _textsystem = GameObject.Find("Distance").GetComponent<Text>();
 
         slider = GameObject.Find("Slider").GetComponent<Slider>();
 
@@ -57,9 +57,9 @@ public class CenterScript : MonoBehaviour
         //HPを最大HPと同じ値に。
         Hp = maxHp;
 
-        times = 0;
+        _times = 0;
 
-        spawn1.SpawnCenter();
+        _spawn1.SpawnCenter();
     }
 
     void Update()
@@ -85,58 +85,55 @@ public class CenterScript : MonoBehaviour
 
             GameOver = true;
 
-           
+
         }
         if (Input.GetButtonDown("Fire1"))
         {
             _kuromaru.Movement();
 
-            times++;
+            _times++;
 
             Vector2 posi = transform.position;
-            Vector2 posi2 = m_kuromaru.transform.position;
+            Vector2 posi2 = _ObjKuromaru.transform.position;
 
             distance = (int)(posi2 - posi).magnitude;
 
             //Debug.Log("距離は" + distance);
 
-            textsystem.text = "距離は" + distance;
+            _textsystem.text = "距離は" + distance;
 
             if (distance <= 1)
             {
-
-
                 slider.value = maxHp;
                 Hp = maxHp;
                 //HPを最大HPと同じ値に
 
-                times = 0;
+                _times = 0;
 
 
                 Debug.Log("成功！ピンをリセット");
 
-                textsystem.text = "次のモグラを探そう！";
+                _textsystem.text = "次のモグラを探そう！";
 
-                Instantiate(effect);             
+                Instantiate(effect);
 
-                spawn1.Effect();
+                _spawn1.Effect();
 
-                spawn1.SpawnCenter();
+                _spawn1.SpawnCenter();
 
             }
             else
             {
-                if (times > 1)
+                if (_times > 1)
                 {
                     Hp--;
                     slider.value = Hp;
-                    Debug.Log(times);
+                    Debug.Log(_times);
                 }
 
             }
         }
 
     }
-
 
 }

@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    public int num = 1;　//右に動くか左に動くかを決める変数num
+    public int _num = 1;　//右に動くか左に動くかを決める変数num
 
-    Vector2 pos;  //オブジェクトの位置を格納するVector変数
+    Vector2 _pos;  //オブジェクトの位置を格納するVector変数
 
     private void Start()
     {
-        pos = transform.position;
+        _pos = transform.position;
     }
 
 
@@ -16,7 +16,7 @@ public class Move : MonoBehaviour
     {
         
 
-        transform.Translate(transform.right * Time.deltaTime * 200 * num);　//位置を動かす処理 time.timeとの違い
+        transform.Translate(transform.right * Time.deltaTime * 200 * _num);　//位置を動かす処理 time.timeとの違い
 
     }
 
@@ -26,12 +26,12 @@ public class Move : MonoBehaviour
 
         if (collision.gameObject.tag == "right")
         {
-            num = -1;
+            _num = -1;
         }
 
         if (collision.gameObject.tag == "left")
         {
-            num = 1;   
+            _num = 1;   
         }
         
     }
