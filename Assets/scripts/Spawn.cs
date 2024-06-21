@@ -11,7 +11,7 @@ public class Spawn : MonoBehaviour
 
     private void Awake()　//Startよりも早く処理を行う
     {
-        score = GameObject.FindAnyObjectByType<Score>();　//ヒエラルキーの中からScoreスクリプトがあるObjectを探してそのScoreを変数scoreに格納
+        //score = GameObject.FindAnyObjectByType<Score>();　//ヒエラルキーの中からScoreスクリプトがあるObjectを探してそのScoreを変数scoreに格納
     }
     void Start()
     {

@@ -28,6 +28,7 @@ public class Timer : MonoBehaviour
     private void Start()
     {
         timeText = GetComponent<TextMeshProUGUI>();
+
         countdownSeconds = 31;
 
         scr2 = GameObject.FindAnyObjectByType<Score>();

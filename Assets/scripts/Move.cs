@@ -4,22 +4,35 @@ public class Move : MonoBehaviour
 {
     public int num = 1;　//右に動くか左に動くかを決める変数num
 
-    Vector2 pos;　　//オブジェクトの位置を格納するVector変数
+    Vector2 pos;  //オブジェクトの位置を格納するVector変数
+
+    private void Start()
+    {
+        pos = transform.position;
+    }
+
+
     void Update()
     {
-        pos = transform.position;　//オブジェクトの位置を格納
+        
 
-        transform.Translate(transform.right * Time.deltaTime * 100 * num);　//位置を動かす処理
+        transform.Translate(transform.right * Time.deltaTime * 200 * num);　//位置を動かす処理 time.timeとの違い
 
-        if (pos.x > 900)　//
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("aaa");
+
+        if (collision.gameObject.tag == "right")
         {
             num = -1;
-
         }
-        if (pos.x < 70)
+
+        if (collision.gameObject.tag == "left")
         {
-            num = 1;
-
+            num = 1;   
         }
+        
     }
 }

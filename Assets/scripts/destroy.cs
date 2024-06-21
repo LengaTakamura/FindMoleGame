@@ -7,7 +7,6 @@ public class Destroy : MonoBehaviour
     [SerializeField]AudioSource AudioSource;
 
     float time = 0f;
-    // Start is called before the first frame update
     void Start()
     {
         time = 0;
@@ -17,8 +16,6 @@ public class Destroy : MonoBehaviour
         AudioSource.Play();
 
     }
-
-    // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime;
@@ -27,6 +24,5 @@ public class Destroy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 }
