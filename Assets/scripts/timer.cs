@@ -7,11 +7,12 @@ public class Timer : MonoBehaviour
 
      private TextMeshProUGUI timeText;
 
+    Score scr2;
+
     [SerializeField] GameObject title;
    
     [SerializeField] CenterScript _center;
 
-    Score scr2;
 
     [SerializeField] GameObject TimeupText;
 
@@ -21,7 +22,7 @@ public class Timer : MonoBehaviour
 
     public bool timeup;
 
-    [SerializeField] GameObject Effect;
+    [SerializeField] GameObject _effect1;
 
     bool once= true;
 
@@ -47,8 +48,9 @@ public class Timer : MonoBehaviour
 
         if (countdownSeconds <= 0 && once )
         {
+            once = false;
         
-            Instantiate(Effect, centerr.transform.position, Quaternion.identity);
+            Instantiate(_effect1, centerr.transform.position, Quaternion.identity);
 
             if (_center.GameOver) return;
 
@@ -62,7 +64,6 @@ public class Timer : MonoBehaviour
 
             timeup = true;
 
-            once = false;
           
         }
     }

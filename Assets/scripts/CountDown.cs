@@ -21,25 +21,23 @@ public class CountDown : MonoBehaviour
     void Update()
     {
         _time += Time.deltaTime;
-
-        if (_time >= 1) 
+        
+        if (_time >= 3.3f)
         {
-            _cdtext.text = "2";
+            Destroy(_cdtext);
         }
-
-        if (_time >= 2)
-        {
-            _cdtext.text = "1";
-        }
-
-        if (_time >= 3)
+        else if (_time >= 3)
         {
             _cdtext.text = "START!";
 
         }
-        if(_time >= 3.3f)
+        else if ( _time >= 2 ) 
         {
-            Destroy(_cdtext);
+            _cdtext.text = "1";
+        }
+        else if ( _time >= 1)
+        {
+            _cdtext.text = "2";
         }
     }
 }

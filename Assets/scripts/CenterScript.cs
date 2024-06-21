@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,10 +7,13 @@ public class CenterScript : MonoBehaviour
 
     [SerializeField] GameObject _ObjKuromaru; //ピンをした位置に移動するカーソルkuromaruを格納する変数m_kuromaruをシリアル化
 
-    Text _textsystem;　// このオブジェクトにあるテキストコンポーネントを格納する変数
+
+    [SerializeField] GameObject _distance;
+
+    TextMeshProUGUI _textSystem;　// このオブジェクトにあるテキストコンポーネントを格納する変数
 
     Spawn _spawn1;
- 
+
     [SerializeField] GameObject _effect;
 
     int _times;
@@ -38,13 +42,15 @@ public class CenterScript : MonoBehaviour
     [SerializeField] Kuromaru _kuromaru;
 
     public bool GameOver;
+
+    bool one = true;
     void Start()
     {
         _ObjKuromaru = GameObject.Find("kuromaru");
 
         _spawn1 = GameObject.Find("Spawn Area").GetComponent<Spawn>();
 
-        _textsystem = GameObject.Find("Distance").GetComponent<Text>();
+        _textSystem = _distance.GetComponent<TextMeshProUGUI>();
 
         slider = GameObject.Find("Slider").GetComponent<Slider>();
 
@@ -70,9 +76,10 @@ public class CenterScript : MonoBehaviour
             this.enabled = false;
         }
 
-        if (slider.value == 0)
-
+        if (slider.value == 0 && one)
         {
+            one = false;
+
             Instantiate(effect, transform.position, Quaternion.identity);
 
             timer.SetActive(false);
@@ -100,7 +107,7 @@ public class CenterScript : MonoBehaviour
 
             //Debug.Log("距離は" + distance);
 
-            _textsystem.text = "距離は" + distance;
+            _textSystem.text = "距離は" + distance;
 
             if (distance <= 1)
             {
@@ -113,7 +120,7 @@ public class CenterScript : MonoBehaviour
 
                 Debug.Log("成功！ピンをリセット");
 
-                _textsystem.text = "次のモグラを探そう！";
+                _textSystem.text = "次のモグラを探そう！";
 
                 Instantiate(effect);
 
