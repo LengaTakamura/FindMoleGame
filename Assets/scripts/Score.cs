@@ -35,32 +35,32 @@ public class Score : MonoBehaviour
 
             _audioSource.PlayOneShot(_clipsList[0]);
         }
+        else if (_score >= 10)　//スコアが10以上の時に表示するテキスト
+        {
+            scoreText.text = "お前は叩いたモグラの数を覚えているのか？（" + _score + "）";
 
-        if (_score >=1)  //スコアが1以上の時に表示するテキスト
+            _audioSource.PlayOneShot(_clipsList[3]);
+        }
+        else if (_score >= 8)　//スコアが8以上の時に表示するテキスト
+        {
+            scoreText.text = "天才！スコアは" + _score + "点です";
+
+            _audioSource.PlayOneShot(_clipsList[2]);
+        }
+
+        else if (_score >= 5)　//スコアが5以上の時に表示するテキスト
+        {
+            scoreText.text = "すごい！スコアは" + _score + "点です";
+
+            _audioSource.PlayOneShot(_clipsList[2]);
+        }
+        else if (_score >=1)  //スコアが1以上の時に表示するテキスト
         {
             scoreText.text = "スコアは" + _score + "点です！特になし！";
 
             _audioSource.PlayOneShot(_clipsList[1]);
         }
 
-        if (_score >= 5)　//スコアが5以上の時に表示するテキスト
-        {
-            scoreText.text = "すごい！スコアは" + _score + "点です";
 
-            _audioSource.PlayOneShot(_clipsList[2]);
-        }
-
-        if (_score >= 8)　//スコアが8以上の時に表示するテキスト
-        {
-            scoreText.text = "天才！スコアは" + _score + "点です";
-
-            _audioSource.PlayOneShot(_clipsList[2]);
-        }
-        if (_score >= 10)　//スコアが10以上の時に表示するテキスト
-        {
-            scoreText.text = "お前は叩いたモグラの数を覚えているのか？（" + _score + "）";
-
-            _audioSource.PlayOneShot(_clipsList[3]);
-        }
     }
 }
