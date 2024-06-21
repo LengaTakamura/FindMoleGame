@@ -817,6 +817,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74e434d9cff2ec439301bcdf0b8d14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _clipsList:
+  - {fileID: 8300000, guid: 7df36f0b60f24894d969f036b955e467, type: 3}
+  - {fileID: 8300000, guid: 94c52ea38ef902e4dafeaa3a735b458c, type: 3}
+  - {fileID: 8300000, guid: 731e669b4db022c47b7e188df5fc5a9c, type: 3}
+  - {fileID: 8300000, guid: ecefda6065e19054780164f63946706b, type: 3}
 --- !u!114 &302812988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,7 +844,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 85c33f6ecc0c4a54eba42c31db256e97, type: 3}
-    m_FontSize: 50
+    m_FontSize: 35
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -1844,6 +1849,7 @@ MonoBehaviour:
   stp: {fileID: 1556836933}
   effect: {fileID: 2785453864879825813, guid: 2dba4506125838a408e279ee1d62fa0e, type: 3}
   _kuromaru: {fileID: 2020536621}
+  _audioSystem: {fileID: 1761235725}
   GameOver: 0
 --- !u!58 &1021306773
 CircleCollider2D:
@@ -2602,7 +2608,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: de5d85ebf53008e4883ca9035794fef3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0

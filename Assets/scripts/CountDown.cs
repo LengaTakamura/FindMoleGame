@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 public class CountDown : MonoBehaviour
 {
-    float _time;
+    double _time;
 
     [SerializeField] GameObject _TextMeshPro;
 
@@ -38,8 +38,6 @@ public class CountDown : MonoBehaviour
     {
         _time += Time.deltaTime;
 
-        //Debug.Log(_time);
-
         if (_time >= 3.3f)
         {
             Destroy(_cdtext);
@@ -59,7 +57,7 @@ public class CountDown : MonoBehaviour
             _cdtext.text = "1";
         }
 
-        else if (_time >= 1.7f && _isPlaying2)
+        else if (_time >= 1.8f && _isPlaying2)
         {
             _isPlaying2 = false;
 
@@ -69,7 +67,7 @@ public class CountDown : MonoBehaviour
         {
             _cdtext.text = "2";
         }
-        else if (_time >= 0.7f && _isPlaying)
+        else if (_time >= 0.8f && _isPlaying)
         {
             _isPlaying = false;
 

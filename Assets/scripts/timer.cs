@@ -29,9 +29,7 @@ public class Timer : MonoBehaviour
     [SerializeField] GameObject _audioSystem;
 
     AudioSource _audioSource;
-
-
-    private void Start()
+   private void Start()
     {
         timeText = GetComponent<TextMeshProUGUI>();
 
@@ -49,7 +47,7 @@ public class Timer : MonoBehaviour
 
     public void AddTimer()
     {
-        _audioSource.Play();
+        //_audioSource.Play();
 
         countdownSeconds -= Time.deltaTime;
         var span = new TimeSpan(0, 0, (int)countdownSeconds);
@@ -58,6 +56,8 @@ public class Timer : MonoBehaviour
         if (countdownSeconds <= 0 && once )
         {
             once = false;
+
+            _audioSource.Pause();
         
             Instantiate(_effect1, centerr.transform.position, Quaternion.identity);
 

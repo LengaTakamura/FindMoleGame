@@ -41,6 +41,10 @@ public class CenterScript : MonoBehaviour
 
     [SerializeField] Kuromaru _kuromaru;
 
+    [SerializeField] GameObject _audioSystem;
+
+    AudioSource _audioSource;
+
     public bool GameOver;
 
     bool one = true;
@@ -59,6 +63,8 @@ public class CenterScript : MonoBehaviour
         scr = GameObject.FindAnyObjectByType<Score>();
 
         scr = FindFirstObjectByType<Score>();
+
+        _audioSource = _audioSystem.GetComponent<AudioSource>();
 
         //HPを最大HPと同じ値に。
         Hp = maxHp;
@@ -79,6 +85,8 @@ public class CenterScript : MonoBehaviour
         if (slider.value == 0 && one)
         {
             one = false;
+
+            _audioSource.Pause();
 
             Instantiate(effect, transform.position, Quaternion.identity);
 
@@ -117,9 +125,6 @@ public class CenterScript : MonoBehaviour
 
                 _times = 0;
 
-
-                Debug.Log("成功！ピンをリセット");
-
                 _textSystem.text = "次のモグラを探そう！";
 
                 Instantiate(effect);
@@ -135,7 +140,6 @@ public class CenterScript : MonoBehaviour
                 {
                     Hp--;
                     slider.value = Hp;
-                    Debug.Log(_times);
                 }
 
             }
