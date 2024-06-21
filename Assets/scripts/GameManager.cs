@@ -8,10 +8,13 @@ public class GameManager : MonoBehaviour
     TextMeshProUGUI _textMeshPro;
 
     [SerializeField] Stop _stop;
-   
+
+    
     void Start()
     {
         _textMeshPro = _cdtext.GetComponent<TextMeshProUGUI>();
+
+       
     }
     void Update()
     {
@@ -22,6 +25,8 @@ public class GameManager : MonoBehaviour
         if (_textMeshPro == null) 
         {
             _stop.AddOn();
+
+            //_audioSource.Play();
         } 
     }
 }

@@ -26,6 +26,11 @@ public class Timer : MonoBehaviour
 
     bool once= true;
 
+    [SerializeField] GameObject _audioSystem;
+
+    AudioSource _audioSource;
+
+
     private void Start()
     {
         timeText = GetComponent<TextMeshProUGUI>();
@@ -33,15 +38,19 @@ public class Timer : MonoBehaviour
         countdownSeconds = 31;
 
         scr2 = GameObject.FindAnyObjectByType<Score>();
+
+        _audioSource = _audioSystem.GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        Invoke(nameof(AddTimer), 3f);
+        Invoke(nameof(AddTimer), 3.5f);
     }
 
     public void AddTimer()
     {
+        _audioSource.Play();
+
         countdownSeconds -= Time.deltaTime;
         var span = new TimeSpan(0, 0, (int)countdownSeconds);
         timeText.text = span.ToString(@"mm\:ss");
