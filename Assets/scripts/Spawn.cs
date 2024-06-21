@@ -7,7 +7,7 @@ public class Spawn : MonoBehaviour
 
     [SerializeField] GameObject kuro;　// ピン(kuromaru)を格納する変数
 
-    Score score;　//Scoreスクリプトを格納する変数
+    [SerializeField]Score score;　//Scoreスクリプトを格納する変数
 
     private void Awake()　//Startよりも早く処理を行う
     {
@@ -19,9 +19,9 @@ public class Spawn : MonoBehaviour
     }
     public void SpawnCenter()　//目標を画面内のランダムな位置に移動させる
     {
-        float x = Random.Range(-9f, 9f); //画面上の範囲(X)内でランダムな座標を取得する
+        float x = Random.Range(-8.5f, 8.5f); //画面上の範囲(X)内でランダムな座標を取得する
 
-        float y = Random.Range(-4f, 4f); // 画面上の範囲(Y)内でランダムな座標を取得する
+        float y = Random.Range(-4.5f, 4.5f); // 画面上の範囲(Y)内でランダムな座標を取得する
 
         m_center.transform.position = new Vector2 (x, y);    // GameObjectを上記で決まったランダムな場所に移動
                                                          

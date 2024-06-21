@@ -2,44 +2,78 @@ using TMPro;
 using UnityEngine;
 public class CountDown : MonoBehaviour
 {
-    float _time;
+    double _time;
 
     [SerializeField] GameObject _TextMeshPro;
 
     TextMeshProUGUI _cdtext;
 
     [SerializeField] Stop _stt;
- 
+
+    [SerializeField] AudioClip _audioClip;
+
+    [SerializeField] AudioClip _audioClip2;
+
+    AudioSource _audioSource;
+
+    bool _isPlaying = true;
+
+    bool _isPlaying2 = true;
+
+    bool _isPlaying3 = true;
+
     // Start is called before the first frame update
     void Start()
-    { 
+    {
         _cdtext = _TextMeshPro.GetComponent<TextMeshProUGUI>();
 
         _cdtext.text = "3";
+
+        _audioSource = GetComponent<AudioSource>();
+
+        _audioSource.PlayOneShot(_audioClip);
 
     }
     void Update()
     {
         _time += Time.deltaTime;
 
-        if (_time >= 1) 
+        if (_time >= 3.3f)
         {
-            _cdtext.text = "2";
+            Destroy(_cdtext);
         }
+        else if (_time >= 3)
+        {
+            _cdtext.text = "START!";
+        }
+        else if (_time >= 2.8 && _isPlaying3)
+        {
+            _isPlaying3 = false;
 
-        if (_time >= 2)
+            _audioSource.PlayOneShot(_audioClip2);
+        }
+        else if (_time >= 2)
         {
             _cdtext.text = "1";
         }
 
-        if (_time >= 3)
+        else if (_time >= 1.8f && _isPlaying2)
         {
-            _cdtext.text = "START!";
+            _isPlaying2 = false;
 
+            _audioSource.PlayOneShot(_audioClip);
         }
-        if(_time >= 3.3f)
+        else if (_time >= 1)
         {
-            Destroy(_cdtext);
+            _cdtext.text = "2";
         }
+        else if (_time >= 0.8f && _isPlaying)
+        {
+            _isPlaying = false;
+
+            _audioSource.PlayOneShot(_audioClip);
+        }
+
     }
+
 }

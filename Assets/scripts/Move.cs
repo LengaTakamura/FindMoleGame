@@ -1,38 +1,21 @@
 using UnityEngine;
-
 public class Move : MonoBehaviour
 {
-    public int _num = 1;　//右に動くか左に動くかを決める変数num
+    [SerializeField] float _speed2 = 1f;
+    [SerializeField] float _radius2 = 1f;
+    Vector2 _initialPosition2;
+    RectTransform _rect;
 
-    Vector2 _pos;  //オブジェクトの位置を格納するVector変数
-
-    private void Start()
+    void Start()
     {
-        _pos = transform.position;
+        _rect = GetComponent<RectTransform>();
+        _initialPosition2 = _rect.position;
     }
-
 
     void Update()
     {
-        
-
-        transform.Translate(transform.right * Time.deltaTime * 200 * _num);　//位置を動かす処理 time.timeとの違い
-
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("aaa");
-
-        if (collision.gameObject.tag == "right")
-        {
-            _num = -1;
-        }
-
-        if (collision.gameObject.tag == "left")
-        {
-            _num = 1;   
-        }
-        
+        float x = _radius2 * Mathf.Sin(_speed2 * Time.time);
+        Vector2 position = new Vector2(x , _rect.position.y);
+        _rect.position = position + Vector2.right * _initialPosition2;
     }
 }

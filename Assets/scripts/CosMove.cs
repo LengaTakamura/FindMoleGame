@@ -16,7 +16,7 @@ public class CosMove : MonoBehaviour
 
     void Update()
     {
-        float x = _radius * Mathf.Cos(_speed * Time.time);
+        float x = _radius * Mathf.Cos(_speed * Time.time)+ _initialPosition.x;
         Vector2 position = new Vector2(x, transform.position.y);
         transform.position = position + Vector2.right * position.x;
     }

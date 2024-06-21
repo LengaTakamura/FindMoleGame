@@ -7,11 +7,12 @@ public class Timer : MonoBehaviour
 
      private TextMeshProUGUI timeText;
 
+    Score scr2;
+
     [SerializeField] GameObject title;
    
     [SerializeField] CenterScript _center;
 
-    Score scr2;
 
     [SerializeField] GameObject TimeupText;
 
@@ -21,34 +22,44 @@ public class Timer : MonoBehaviour
 
     public bool timeup;
 
-    [SerializeField] GameObject Effect;
+    [SerializeField] GameObject _effect1;
 
     bool once= true;
 
-    private void Start()
+    [SerializeField] GameObject _audioSystem;
+
+    AudioSource _audioSource;
+   private void Start()
     {
         timeText = GetComponent<TextMeshProUGUI>();
 
         countdownSeconds = 31;
 
         scr2 = GameObject.FindAnyObjectByType<Score>();
+
+        _audioSource = _audioSystem.GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        Invoke(nameof(AddTimer), 3f);
+        Invoke(nameof(AddTimer), 3.5f);
     }
 
     public void AddTimer()
     {
+        //_audioSource.Play();
+
         countdownSeconds -= Time.deltaTime;
         var span = new TimeSpan(0, 0, (int)countdownSeconds);
         timeText.text = span.ToString(@"mm\:ss");
 
         if (countdownSeconds <= 0 && once )
         {
+            once = false;
+
+            _audioSource.Pause();
         
-            Instantiate(Effect, centerr.transform.position, Quaternion.identity);
+            Instantiate(_effect1, centerr.transform.position, Quaternion.identity);
 
             if (_center.GameOver) return;
 
@@ -62,7 +73,6 @@ public class Timer : MonoBehaviour
 
             timeup = true;
 
-            once = false;
           
         }
     }
