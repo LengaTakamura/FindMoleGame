@@ -8,13 +8,13 @@ public class Scorer : MonoBehaviour
 
     [SerializeField] Text[] texts;
 
-    Score _score;
+   Score _scoreManager;
 
     void Start()
     {
-        _score = GetComponent<Score>();
+        _scoreManager = GameObject.Find("ScoreManeger").GetComponent<Score>();
 
-        scores[6] = _score.score;
+        scores[6] = _scoreManager.score;
 
         Array.Sort(scores);
 
