@@ -6,4 +6,9 @@ public class Load : MonoBehaviour
     {
         SceneManager.LoadScene("game"); //gameƒV[ƒ“‚ÉˆÚs‚·‚é
     }
+
+    public void OnLoadRankingButtun() 
+    {
+        SceneManager.LoadScene("Ranking");
+    }
 }
