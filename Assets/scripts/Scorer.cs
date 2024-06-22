@@ -8,20 +8,13 @@ public class Scorer : MonoBehaviour
 
     [SerializeField] Text[] texts;
 
-    bool count;
+    Score _score;
 
-    // Start is called before the first frame update
     void Start()
     {
-        if(count == false)
-        {
-            PlayerPrefs.DeleteAll();
+        _score = GetComponent<Score>();
 
-            count = true;
-        }
-
-
-        scores[6] = PlayerPrefs.GetInt("score", 0);
+        scores[6] = _score.score;
 
         Array.Sort(scores);
 

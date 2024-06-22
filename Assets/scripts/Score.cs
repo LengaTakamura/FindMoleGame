@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public  class Score : MonoBehaviour
 {
-    public int  score = 0;　//スコアの初期値を０に設定
+    public  int  score = 0;　//スコアの初期値を０に設定
 
     private Text scoreText;   
 
@@ -14,10 +14,11 @@ public  class Score : MonoBehaviour
 
     [SerializeField]List<AudioClip> _clipsList= new List<AudioClip>();
 
+    public bool result = false;
+
 
     void Start()
     {
-        DontDestroyOnLoad(this);
 
        scoreText = GetComponent<Text>(); //このスクリプトが紐づいているオブジェクトかTextコンポーネントを持ってきて格納
 
@@ -32,7 +33,7 @@ public  class Score : MonoBehaviour
 
    public void ScoreManager()　//スコアを表示するメソッド
     {
-        PlayerPrefs.SetInt("score", score);
+        result = true;  
 
         if (score == 0)　//スコアが０の時に表示するテキスト
         {
