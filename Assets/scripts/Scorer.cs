@@ -8,8 +8,8 @@ public class Scorer : MonoBehaviour
 
     [SerializeField] Text[] texts;
 
-   Score _scoreManager;
-
+    Score _scoreManager;
+ 
 
     void Start()
     {
@@ -17,8 +17,7 @@ public class Scorer : MonoBehaviour
         {
             _scoreManager = GameObject.Find("ScoreManeger").GetComponent<Score>();
         }
-        catch { }   
-
+        catch { }
 
         if (_scoreManager == null)
         {
@@ -28,12 +27,9 @@ public class Scorer : MonoBehaviour
             scores[3] = 0;
             scores[4] = 0;
             scores[5] = 0;
-
-           
         }
         else
         {
-
             scores[6] = _scoreManager.score;
 
             Array.Sort(scores);
@@ -42,10 +38,7 @@ public class Scorer : MonoBehaviour
 
             GetRanking();
         }
-
-
     }
-
     void GetRanking()
     {
         for (int i = 0; i < scores.Length - 1; i++)

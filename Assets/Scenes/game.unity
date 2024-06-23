@@ -2708,6 +2708,14 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 217786813912589465, guid: 027b5ef2afa7c3040b7a2993e1ac0c79, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 217786813912589465, guid: 027b5ef2afa7c3040b7a2993e1ac0c79, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1142486061713800052, guid: 027b5ef2afa7c3040b7a2993e1ac0c79, type: 3}
       propertyPath: m_Name
       value: ScoreText

@@ -17,7 +17,6 @@ public class Score : MonoBehaviour
 
     private void Awake()
     {
-
         if (origin == false)
         {
             DontDestroyOnLoad(this);
@@ -28,7 +27,6 @@ public class Score : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
     }
 
     void Start()
@@ -41,11 +39,13 @@ public class Score : MonoBehaviour
     {
         score += 1;　//カウントを１ずつ増やす
 
-        Debug.Log(score);
+        //Debug.Log(score);
     }
 
     public void ScoreManager()　//スコアを表示するメソッド
     {
+        Debug.Log(score + "最後に来てほしい");
+
         _scrText = GameObject.Find("ScoreText").GetComponent<Text>();
 
         if (score == 0)　//スコアが０の時に表示するテキスト
@@ -78,7 +78,6 @@ public class Score : MonoBehaviour
 
             _audioSource.PlayOneShot(_clipsList[1]);
         }
-        Debug.Log(score);
     }
 }
 

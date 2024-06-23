@@ -119,6 +119,8 @@ public class CenterScript : MonoBehaviour
 
             if (distance <= 1)
             {
+                scr.AddScoreCount();
+
                 slider.value = maxHp;
                 Hp = maxHp;
                 //HP‚ðÅ‘åHP‚Æ“¯‚¶’l‚É
@@ -127,7 +129,7 @@ public class CenterScript : MonoBehaviour
 
                 _textSystem.text = "ŽŸ‚Ìƒ‚ƒOƒ‰‚ð’T‚»‚¤I";
 
-                Instantiate(effect);
+                //Instantiate(effect);
 
                 _spawn1.Effect();
 

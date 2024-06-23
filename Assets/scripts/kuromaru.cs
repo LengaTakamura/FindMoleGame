@@ -5,8 +5,8 @@ public class Kuromaru : MonoBehaviour
 {
     private Vector2 position;
 
-    [SerializeField]AudioSource audioSource;
-    
+    [SerializeField] AudioSource audioSource;
+
     Timer m_timer;
 
     CenterScript m_center;
@@ -26,12 +26,12 @@ public class Kuromaru : MonoBehaviour
 
         position = Camera.main.ScreenToWorldPoint(position);
 
-            Vector2 pin = position;
+        Vector2 pin = position;
 
-            transform.position = pin;
+        transform.position = pin;
 
-            audioSource.Play();
+        audioSource.Play();
     }
 
-    
+
 }

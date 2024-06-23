@@ -7,12 +7,7 @@ public class Spawn : MonoBehaviour
 
     [SerializeField] GameObject kuro;　// ピン(kuromaru)を格納する変数
 
-    Score score;　//Scoreスクリプトを格納する変数
-
-    private void Awake()　//Startよりも早く処理を行う
-    {
-        score = GameObject.FindAnyObjectByType<Score>();　//ヒエラルキーの中からScoreスクリプトがあるObjectを探してそのScoreを変数scoreに格納
-    }
+   
     void Start()
     {
         m_center = GameObject.Find("Center");　//m_centerにcenterという名前のゲームオブジェクトを格納
@@ -23,14 +18,12 @@ public class Spawn : MonoBehaviour
 
         float y = Random.Range(-4.5f, 4.5f); // 画面上の範囲(Y)内でランダムな座標を取得する
 
-        m_center.transform.position = new Vector2 (x, y);    // GameObjectを上記で決まったランダムな場所に移動
-                                                         
+        m_center.transform.position = new Vector2(x, y);    // GameObjectを上記で決まったランダムな場所に移動
+
     }
     public void Effect()    //モグラが出てくる
     {
-        Instantiate(effect,kuro.transform.position,kuro.transform.rotation); //カウントを増やす
+        Instantiate(effect, kuro.transform.position, kuro.transform.rotation); //カウントを増やす
 
-        score.AddScoreCount();  //スコアをカウントするメソッドを呼び出す(モグラが出るたびにカウントを１増やす)
-       
     }
 }
