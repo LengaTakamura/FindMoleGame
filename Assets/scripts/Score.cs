@@ -2,17 +2,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public  class Score : MonoBehaviour
+public class Score : MonoBehaviour
 {
-    public  int  score = 0;　//スコアの初期値を０に設定
+    public int score = 0;　//スコアの初期値を０に設定
 
-    [SerializeField]Text _scrText;
+    [SerializeField] Text _scrText;
 
     private AudioSource _audioSource;
 
-    [SerializeField]List<AudioClip> _clipsList= new List<AudioClip>();
+    [SerializeField] List<AudioClip> _clipsList = new List<AudioClip>();
 
-    
+
     private static bool origin = false;
 
     private void Awake()
@@ -33,18 +33,20 @@ public  class Score : MonoBehaviour
 
     void Start()
     {
-       
-       _audioSource = GetComponent<AudioSource>();  
+
+        _audioSource = GetComponent<AudioSource>();
 
     }
     public void AddScoreCount()　//スコアをカウントするメソッド
     {
         score += 1;　//カウントを１ずつ増やす
+
+        Debug.Log(score);
     }
 
-   public void ScoreManager()　//スコアを表示するメソッド
+    public void ScoreManager()　//スコアを表示するメソッド
     {
-        _scrText = GameObject.Find("ScoreText").GetComponent<Text>();   
+        _scrText = GameObject.Find("ScoreText").GetComponent<Text>();
 
         if (score == 0)　//スコアが０の時に表示するテキスト
         {
@@ -70,13 +72,13 @@ public  class Score : MonoBehaviour
 
             _audioSource.PlayOneShot(_clipsList[2]);
         }
-        else if (score >=1)  //スコアが1以上の時に表示するテキスト
+        else if (score >= 1)  //スコアが1以上の時に表示するテキスト
         {
             _scrText.text = "スコアは" + score + "点です！特になし！";
 
             _audioSource.PlayOneShot(_clipsList[1]);
         }
-
+        Debug.Log(score);
     }
 }
 
