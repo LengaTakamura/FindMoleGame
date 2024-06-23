@@ -23,7 +23,7 @@ public class Spawn : MonoBehaviour
     }
     public void Effect()    //モグラが出てくる
     {
-        Instantiate(effect, kuro.transform.position, kuro.transform.rotation); //カウントを増やす
+        Instantiate(effect, kuro.transform.position, kuro.transform.rotation); 
 
     }
 }

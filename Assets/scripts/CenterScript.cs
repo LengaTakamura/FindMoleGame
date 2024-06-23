@@ -129,8 +129,6 @@ public class CenterScript : MonoBehaviour
 
                 _textSystem.text = "Ÿ‚Ìƒ‚ƒOƒ‰‚ğ’T‚»‚¤I";
 
-                //Instantiate(effect);
-
                 _spawn1.Effect();
 
                 _spawn1.SpawnCenter();
