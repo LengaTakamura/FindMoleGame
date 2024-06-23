@@ -22,7 +22,6 @@ public class CountDown : MonoBehaviour
 
     bool _isPlaying3 = true;
 
-    // Start is called before the first frame update
     void Start()
     {
         _cdtext = _TextMeshPro.GetComponent<TextMeshProUGUI>();

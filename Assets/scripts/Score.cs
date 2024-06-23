@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,8 +9,6 @@ public  class Score : MonoBehaviour
     [SerializeField]Text _scrText;
 
     private AudioSource _audioSource;
-
-    //[SerializeField] AudioClip[] _clipsList;
 
     [SerializeField]List<AudioClip> _clipsList= new List<AudioClip>();
 
@@ -67,7 +64,6 @@ public  class Score : MonoBehaviour
 
             _audioSource.PlayOneShot(_clipsList[2]);
         }
-
         else if (score >= 5)　//スコアが5以上の時に表示するテキスト
         {
             _scrText.text = "すごい！スコアは" + score + "点です";

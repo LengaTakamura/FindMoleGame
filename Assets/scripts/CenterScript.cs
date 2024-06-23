@@ -23,6 +23,7 @@ public class CenterScript : MonoBehaviour
     Slider slider;
 
     int maxHp = 5;
+
     int Hp;
 
     [SerializeField] GameObject gameover;

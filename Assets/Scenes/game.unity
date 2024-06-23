@@ -2698,7 +2698,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 217786813912589465, guid: 027b5ef2afa7c3040b7a2993e1ac0c79, type: 3}
       propertyPath: m_Text
-      value: yujtygjhththththththth
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 217786813912589465, guid: 027b5ef2afa7c3040b7a2993e1ac0c79, type: 3}
       propertyPath: m_FontData.m_MaxSize
