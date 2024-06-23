@@ -60,9 +60,7 @@ public class CenterScript : MonoBehaviour
 
         timer1 = GameObject.FindObjectOfType<Timer>();
 
-        scr = GameObject.FindAnyObjectByType<Score>();
-
-        scr = FindFirstObjectByType<Score>();
+        scr = GameObject.Find("ScoreManeger").GetComponent<Score>();
 
         _audioSource = _audioSystem.GetComponent<AudioSource>();
 
@@ -84,6 +82,7 @@ public class CenterScript : MonoBehaviour
 
         if (slider.value == 0 && one)
         {
+
             one = false;
 
             _audioSource.Pause();

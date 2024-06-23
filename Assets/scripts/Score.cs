@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,7 +7,7 @@ public  class Score : MonoBehaviour
 {
     public  int  score = 0;　//スコアの初期値を０に設定
 
-    Text _scrText;
+    [SerializeField]Text _scrText;
 
     private AudioSource _audioSource;
 
@@ -15,16 +16,28 @@ public  class Score : MonoBehaviour
     [SerializeField]List<AudioClip> _clipsList= new List<AudioClip>();
 
     
+    private static bool origin = false;
+
+    private void Awake()
+    {
+
+        if (origin == false)
+        {
+            DontDestroyOnLoad(this);
+
+            origin = true;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
+    }
+
     void Start()
     {
-        _scrText =GameObject.Find("Scoretext").GetComponent<Text>();
-
-        DontDestroyOnLoad(this);
        
        _audioSource = GetComponent<AudioSource>();  
-
-        
-
 
     }
     public void AddScoreCount()　//スコアをカウントするメソッド
@@ -34,7 +47,8 @@ public  class Score : MonoBehaviour
 
    public void ScoreManager()　//スコアを表示するメソッド
     {
-     
+        _scrText = GameObject.Find("ScoreText").GetComponent<Text>();   
+
         if (score == 0)　//スコアが０の時に表示するテキスト
         {
             _scrText.text = "残念！スコアは" + score + "点です";
@@ -69,3 +83,4 @@ public  class Score : MonoBehaviour
 
     }
 }
+

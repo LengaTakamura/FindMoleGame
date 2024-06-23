@@ -10,17 +10,38 @@ public class Scorer : MonoBehaviour
 
    Score _scoreManager;
 
+
     void Start()
     {
-        _scoreManager = GameObject.Find("ScoreManeger").GetComponent<Score>();
+        try
+        {
+            _scoreManager = GameObject.Find("ScoreManeger").GetComponent<Score>();
+        }
+        catch { }   
 
-        scores[6] = _scoreManager.score;
 
-        Array.Sort(scores);
+        if (_scoreManager == null)
+        {
+            scores[0] = 0;
+            scores[1] = 0;
+            scores[2] = 0;
+            scores[3] = 0;
+            scores[4] = 0;
+            scores[5] = 0;
 
-        Array.Reverse(scores);
+           
+        }
+        else
+        {
 
-        GetRanking();
+            scores[6] = _scoreManager.score;
+
+            Array.Sort(scores);
+
+            Array.Reverse(scores);
+
+            GetRanking();
+        }
 
 
     }

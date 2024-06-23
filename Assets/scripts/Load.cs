@@ -4,6 +4,15 @@ public class Load : MonoBehaviour
 {
     public void OnStartButtun ()　// スタートボタンを押したときの処理
     {
+        try
+        {
+            var scoreManager = GameObject.Find("ScoreManeger").GetComponent<Score>();
+
+            scoreManager.score = 0;
+        }
+        catch { }
+
+
         SceneManager.LoadScene("game"); //gameシーンに移行する
     }
 

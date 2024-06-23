@@ -7,11 +7,11 @@ public class Spawn : MonoBehaviour
 
     [SerializeField] GameObject kuro;　// ピン(kuromaru)を格納する変数
 
-    [SerializeField]Score score;　//Scoreスクリプトを格納する変数
+    Score score;　//Scoreスクリプトを格納する変数
 
     private void Awake()　//Startよりも早く処理を行う
     {
-        //score = GameObject.FindAnyObjectByType<Score>();　//ヒエラルキーの中からScoreスクリプトがあるObjectを探してそのScoreを変数scoreに格納
+        score = GameObject.FindAnyObjectByType<Score>();　//ヒエラルキーの中からScoreスクリプトがあるObjectを探してそのScoreを変数scoreに格納
     }
     void Start()
     {
