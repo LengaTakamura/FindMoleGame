@@ -18,12 +18,12 @@ public class RankingLoadOnce : MonoBehaviour
     }
     public void OnceScore()
     {
-        try
-        {
+        //try
+        //{
 
-            _score.SetActive(false);
-        }
-        catch { }
+        //    _score.SetActive(false);
+        //}
+        //catch { }
        
 
         SceneManager.LoadScene("Ranking");

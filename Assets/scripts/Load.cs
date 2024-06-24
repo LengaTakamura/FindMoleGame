@@ -13,17 +13,17 @@ public class Load : MonoBehaviour
 
     public void OnStartButtun()　// スタートボタンを押したときの処理
     {
-        try
-        {
-            _score.SetActive(true);
-        }
-        catch { }   
+        //try
+        //{
+        //    _score.SetActive(true);
+        //}
+        //catch { }   
         try
         {
             
             var scoreManager = GameObject.Find("ScoreManeger").GetComponent<Score>();
 
-            scoreManager.score = 0;
+            Score.score = 0;
 
             Debug.Log("スコアをリセット");
         }

@@ -4,9 +4,9 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public int score = 0;　//スコアの初期値を０に設定
+    public static int score = 0;　//スコアの初期値を０に設定
 
-    [SerializeField] Text _scrText;
+    Text _scrText;
 
     private AudioSource _audioSource;
 
@@ -34,6 +34,11 @@ public class Score : MonoBehaviour
 
         _audioSource = GetComponent<AudioSource>();
 
+        try
+        {
+            _scrText = GameObject.Find("ScoreText").GetComponent<Text>();
+        }
+        catch { }
     }
     public void AddScoreCount()　//スコアをカウントするメソッド
     {

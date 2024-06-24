@@ -11,7 +11,8 @@ public class Scorer : MonoBehaviour
 
     Score _scoreManager;
 
-    
+    [SerializeField]int count = 1;
+
     void Start()
     {
         try
@@ -20,30 +21,38 @@ public class Scorer : MonoBehaviour
         }
         catch 
         {
-            return;
-            
+ 
         }
 
-        if (_scoreManager == null)
+        if (Score.score == 0 )
         {
-            scores[0] = 0;
-            scores[1] = 0;
-            scores[2] = 0;
-            scores[3] = 0;
-            scores[4] = 0;
-            scores[5] = 0;
-        }
-        else if (_scoreManager != null )
-        {
-
-
-            scores[6] = _scoreManager.score;
+           
+            scores[6] = Score.score;
 
             Array.Sort(scores);
 
             Array.Reverse(scores);
 
             GetRanking();
+
+          
+
+            Debug.Log("スコアなし" + Score.score);
+        }
+        else 
+        {
+
+            scores[6] = Score.score;
+
+            Array.Sort(scores);
+
+            Array.Reverse(scores);
+
+            GetRanking();
+
+            
+
+            Debug.Log("スコアを計算"+ Score.score);
         }
     }
     void GetRanking()
