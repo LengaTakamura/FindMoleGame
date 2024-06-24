@@ -9,8 +9,8 @@ public class Scorer : MonoBehaviour
     [SerializeField] Text[] texts;
 
     Score _scoreManager;
- 
 
+    public static bool once ;
     void Start()
     {
         try
@@ -28,8 +28,10 @@ public class Scorer : MonoBehaviour
             scores[4] = 0;
             scores[5] = 0;
         }
-        else
+        else if (_scoreManager != null )
         {
+            
+
             scores[6] = _scoreManager.score;
 
             Array.Sort(scores);
@@ -43,7 +45,7 @@ public class Scorer : MonoBehaviour
     {
         for (int i = 0; i < scores.Length - 1; i++)
         {
-            texts[i].text = "ƒXƒRƒA" + scores[i];
+            texts[i].text = " "+ scores[i];
 
         }
 

@@ -1,9 +1,14 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Load : MonoBehaviour
 {
+     
+
     public void OnStartButtun()　// スタートボタンを押したときの処理
     {
+
+
         try
         {
             var scoreManager = GameObject.Find("ScoreManeger").GetComponent<Score>();
@@ -20,6 +25,8 @@ public class Load : MonoBehaviour
 
     public void OnLoadRankingButtun()
     {
+     
         SceneManager.LoadScene("Ranking");
+
     }
 }

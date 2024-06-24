@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -7.2, y: 357.97}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 203.7, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9130780044598261064
 CanvasRenderer:
@@ -78,4 +78,6 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30B9\u30B3\u30A2\u3000\uFF10\n"
+  m_Text: '
+
+'
