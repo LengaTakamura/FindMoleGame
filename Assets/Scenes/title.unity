@@ -206,9 +206,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1714270331}
-        m_TargetAssemblyTypeName: Load, Assembly-CSharp
-        m_MethodName: OnLoadRankingButtun
+      - m_Target: {fileID: 1714270334}
+        m_TargetAssemblyTypeName: RankingLoadOnce, Assembly-CSharp
+        m_MethodName: OnceScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1329,6 +1329,7 @@ GameObject:
   - component: {fileID: 1714270332}
   - component: {fileID: 1714270331}
   - component: {fileID: 1714270333}
+  - component: {fileID: 1714270334}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1373,6 +1374,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f44a64226e082d2429f533c40256c7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1714270334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714270330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fa0c5bec6040b4381624fd721b0a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1921348933

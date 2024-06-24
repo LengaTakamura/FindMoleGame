@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,14 +11,18 @@ public class Scorer : MonoBehaviour
 
     Score _scoreManager;
 
-    public static bool once ;
+    
     void Start()
     {
         try
         {
             _scoreManager = GameObject.Find("ScoreManeger").GetComponent<Score>();
         }
-        catch { }
+        catch 
+        {
+            return;
+            
+        }
 
         if (_scoreManager == null)
         {
@@ -30,7 +35,7 @@ public class Scorer : MonoBehaviour
         }
         else if (_scoreManager != null )
         {
-            
+
 
             scores[6] = _scoreManager.score;
 
@@ -45,7 +50,7 @@ public class Scorer : MonoBehaviour
     {
         for (int i = 0; i < scores.Length - 1; i++)
         {
-            texts[i].text = " "+ scores[i];
+            texts[i].text = " " + scores[i];
 
         }
 
