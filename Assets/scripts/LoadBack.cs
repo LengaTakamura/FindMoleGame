@@ -4,6 +4,6 @@ public class LoadBack : MonoBehaviour
 {
     public void OnBackButtun() //ボタンを押したときの処理
     {
-        SceneManager.LoadScene("title");　//タイトルシーンに移行する
+        SceneManager.LoadScene("title");　//titleシーンに移行する
     }
 }

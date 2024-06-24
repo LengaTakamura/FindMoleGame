@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 180432716}
   - component: {fileID: 180432714}
   m_Layer: 5
-  m_Name: TitleBack
+  m_Name: LoadRabking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -646,9 +646,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 235060669}
-        m_TargetAssemblyTypeName: LoadBack, Assembly-CSharp
-        m_MethodName: OnBackButtun
+      - m_Target: {fileID: 235060674}
+        m_TargetAssemblyTypeName: Load, Assembly-CSharp
+        m_MethodName: OnLoadRankingButtun
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -809,9 +809,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 235060670}
-  - component: {fileID: 235060669}
   - component: {fileID: 235060672}
   - component: {fileID: 235060673}
+  - component: {fileID: 235060674}
   m_Layer: 0
   m_Name: GameManager2
   m_TagString: Untagged
@@ -819,18 +819,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &235060669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235060668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04a0c6707cbb5a946b1a2349bdd7d1af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &235060670
 RectTransform:
   m_ObjectHideFlags: 0
@@ -872,6 +860,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cdtext: {fileID: 2126362970}
   _stop: {fileID: 1556836933}
+--- !u!114 &235060674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235060668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecfeb71695496884bacb1da4dd35b176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &461072963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,7 +1535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u2192\u30BF\u30A4\u30C8\u30EB\u753B\u9762\u306B\u623B\u308B\u2190"
+  m_text: "\u2192\u30E9\u30F3\u30AD\u30F3\u30B0\u753B\u9762\u3078\u2190"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cfc929d5679d79c47ae48d3c3b31891d, type: 2}
   m_sharedMaterial: {fileID: 8233477121152643599, guid: cfc929d5679d79c47ae48d3c3b31891d, type: 2}
@@ -2700,6 +2700,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 217786813912589465, guid: 027b5ef2afa7c3040b7a2993e1ac0c79, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 7cb99d1857da99349ad3f1fa9c11769e, type: 3}
     - target: {fileID: 217786813912589465, guid: 027b5ef2afa7c3040b7a2993e1ac0c79, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 60
