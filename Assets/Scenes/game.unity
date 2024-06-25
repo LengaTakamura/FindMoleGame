@@ -802,9 +802,9 @@ RectTransform:
   - {fileID: 1811857795}
   - {fileID: 227444390}
   - {fileID: 177510235}
+  - {fileID: 1304667467}
   - {fileID: 2126362973}
   - {fileID: 556376281}
-  - {fileID: 1304667467}
   - {fileID: 1769222516}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
