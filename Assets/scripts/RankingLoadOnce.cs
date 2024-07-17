@@ -18,10 +18,7 @@ public class RankingLoadOnce : MonoBehaviour
     }
     public void OnceScore()
     {
-       
-
         SceneManager.LoadScene("Ranking");
-
     }
     
 }
